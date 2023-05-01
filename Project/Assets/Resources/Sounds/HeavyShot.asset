@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d5bb33314a1354299cbbee8853b5fe, type: 3}
+  m_Name: HeavyShot
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: 18a3a72bb5823584d8d9c6ce40c74a81, type: 3}
+  - {fileID: 8300000, guid: e99375980478b884c8bca2df318910e5, type: 3}
+  - {fileID: 8300000, guid: 9b7f86986a6525f438fa81870a8349b2, type: 3}
