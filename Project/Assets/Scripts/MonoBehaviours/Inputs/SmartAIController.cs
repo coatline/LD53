@@ -72,7 +72,8 @@ public class SmartAIController : AiController
         Vector3 aimAhead = Vector3.zero;
 
         if (targetRb != null)
-            aimAhead = targetRb.velocity.normalized;
+            if (Vector2.Distance(transform.position, Target.position) > 1.5f)
+                aimAhead = targetRb.velocity.normalized;
 
         //Gun g = itemHolder.Item as Gun;
         //float attackSpeed = g.AttackForce;

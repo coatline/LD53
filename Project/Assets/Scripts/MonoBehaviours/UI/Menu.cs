@@ -27,6 +27,7 @@ public class Menu : MonoBehaviour
 
     public void LoadMenu()
     {
+        Game.I.Restart();
         SceneManager.LoadScene("Menu");
     }
 }

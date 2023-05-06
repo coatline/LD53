@@ -31,9 +31,9 @@ MonoBehaviour:
   attackCount: 1
   fadeOut: 1
   fadeOutMagnitude: 0
-  maxLifeTime: 0.25
+  maxLifeTime: 0.3
   spread: 30
-  damage: 2
+  damage: 3.5
   knockBack: 0
   customRange: 0
   burst: 0
@@ -49,6 +49,6 @@ MonoBehaviour:
     muzzleFlashSpeed: 4
     muzzleFlashSize: 3
     doFlash: 1
-  shotsPerClip: 50
-  reloadTime: 1
+  shotsPerClip: 30
+  reloadTime: 0.5
   reloadAnimation: 0

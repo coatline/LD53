@@ -7,7 +7,8 @@ public class ItemUserDelay : MonoBehaviour
 {
     public event System.Action<float> OnDelay;
 
-    public bool CantUseItem { get; private set; }
+    public bool CantUseItem { get => cantUseItem; private set => cantUseItem = value; }
+    bool cantUseItem;
     [SerializeField] Inputs controller;
     [SerializeField] ItemUser user;
     bool needInputReleased;

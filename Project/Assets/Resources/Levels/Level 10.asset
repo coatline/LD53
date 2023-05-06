@@ -15,7 +15,7 @@ MonoBehaviour:
   order: 9
   enemies:
   - enemyPrefab: {fileID: 7170879263226799267, guid: 017361b9df368264d87f88e3fa81fa5a, type: 3}
-    count: 1
+    count: 3
   decorTiles:
   - {fileID: 11400000, guid: fbfe25698857a064689f1704778a309e, type: 2}
   - {fileID: 11400000, guid: 5b7dd76f90916fe4e9c12dac7a13365a, type: 2}
