@@ -51,9 +51,8 @@ GameObject:
   - component: {fileID: 322581673764668645}
   - component: {fileID: 7080304281029237527}
   - component: {fileID: 7363018921980612098}
-  - component: {fileID: 1568890532012686906}
   - component: {fileID: 272486818878041298}
-  - component: {fileID: -7200294629483465563}
+  - component: {fileID: 5582576072384116168}
   m_Layer: 10
   m_Name: EnemyFastDumb
   m_TagString: Enemy
@@ -97,14 +96,16 @@ MonoBehaviour:
   mouseReleaseDelayRange: 0
   mover: {fileID: 2590276648764502474}
   itemHolder: {fileID: 8599872323298641864}
+  findClosestEnemyDelay: 1
+  shootRangeMultiplier: 0
   dontPickupWeapons: 0
   detectionRadius: 11
   grabber: {fileID: 4044472490742888871}
   delay: {fileID: 3566404810832053707}
-  itemUser: {fileID: 3302608261936981496}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
+  itemUser: {fileID: 3302608261936981496}
   enemyTag: Ally
   armed: 0
   aim: 0
@@ -137,7 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8edd84c10dcbbea4d81ef2eaf7bbe26e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupCollider: {fileID: 1568890532012686906}
+  pickupCollider: {fileID: 5582576072384116168}
   itemHolder: {fileID: 8599872323298641864}
 --- !u!114 &8599872323298641864
 MonoBehaviour:
@@ -183,7 +184,7 @@ MonoBehaviour:
   itemHolder: {fileID: 8599872323298641864}
   damageable: {fileID: 8175592755794440820}
   hitBoxes:
-  - {fileID: 1568890532012686906}
+  - {fileID: 5582576072384116168}
 --- !u!114 &8175592755794440820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,6 +200,8 @@ MonoBehaviour:
   Healed:
     m_PersistentCalls:
       m_Calls: []
+  audioSource: {fileID: 0}
+  hitSound: {fileID: 0}
   maxHealth: 15
 --- !u!114 &3566404810832053707
 MonoBehaviour:
@@ -270,8 +273,29 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &1568890532012686906
-BoxCollider2D:
+--- !u!95 &272486818878041298
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727575396255750587}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ea789e907d1ece740b6c0ded14c446c2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!58 &5582576072384116168
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -302,54 +326,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0013298392, y: 0.080201186}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 0.6302948, y: 0.28105015}
-  m_EdgeRadius: 0
---- !u!95 &272486818878041298
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1727575396255750587}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ea789e907d1ece740b6c0ded14c446c2, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!114 &-7200294629483465563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1727575396255750587}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8edd84c10dcbbea4d81ef2eaf7bbe26e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pickupCollider: {fileID: 1568890532012686906}
-  itemHolder: {fileID: 8599872323298641864}
+  m_Radius: 0.2
 --- !u!1 &3508841885620437066
 GameObject:
   m_ObjectHideFlags: 0
@@ -933,7 +912,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5742099030263053841
 Transform:
   m_ObjectHideFlags: 0

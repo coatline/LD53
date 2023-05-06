@@ -132,4 +132,17 @@ public class ItemUser : MonoBehaviour
 
         return newProjectile;
     }
+
+    public Vector2 BulletHole()
+    {
+        if (itemHolder.Item != null)
+            if (itemHolder.Item.Type == ItemType.Gun)
+            {
+                Gun gun = itemHolder.Item as Gun;
+                var bulletHole = recoil.GetOffsetFromHand(new Vector2(gun.AttackOffset.x, gun.AttackOffset.y));
+                return itemSprite.transform.position + bulletHole;
+            }
+
+        return itemSprite.transform.position;
+    }
 }

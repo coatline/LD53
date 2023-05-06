@@ -5470,7 +5470,7 @@ MonoBehaviour:
       m_Calls: []
   audioSource: {fileID: 155010973199890278}
   hitSound: {fileID: 11400000, guid: 4c38fa6a7d377874e8efe8ecf82ef7eb, type: 2}
-  maxHealth: 100
+  maxHealth: 150
 --- !u!114 &923394248017972766
 MonoBehaviour:
   m_ObjectHideFlags: 0

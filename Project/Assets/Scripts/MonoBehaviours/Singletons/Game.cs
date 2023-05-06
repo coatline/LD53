@@ -66,7 +66,6 @@ public class AllyData
     public AllyData(GameObject prefab, bool isPlayer = false)
     {
         this.prefabName = prefab.name;
-        Debug.Log(prefabName.Replace("(Clone)", ""));
         this.isPlayer = isPlayer;
         health = prefab.GetComponent<Damageable>().Health;
         weapon = prefab.GetComponent<ItemHolder>().Item;

@@ -142,14 +142,16 @@ MonoBehaviour:
   mouseReleaseDelayRange: 0.1
   mover: {fileID: 2590276648764502474}
   itemHolder: {fileID: 8599872323298641864}
+  findClosestEnemyDelay: 0
+  shootRangeMultiplier: 1.2
   dontPickupWeapons: 0
   detectionRadius: 30
   grabber: {fileID: 4044472490742888871}
   delay: {fileID: 3566404810832053707}
-  itemUser: {fileID: 3302608261936981496}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 0
+  itemUser: {fileID: 3302608261936981496}
   enemyTag: Enemy
   armed: 1
   aim: 0
@@ -244,7 +246,9 @@ MonoBehaviour:
   Healed:
     m_PersistentCalls:
       m_Calls: []
-  maxHealth: 150
+  audioSource: {fileID: 0}
+  hitSound: {fileID: 0}
+  maxHealth: 130
 --- !u!114 &3566404810832053707
 MonoBehaviour:
   m_ObjectHideFlags: 0

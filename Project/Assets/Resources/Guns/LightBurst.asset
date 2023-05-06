@@ -18,7 +18,7 @@ MonoBehaviour:
   description: 
   cost: 0
   autoUse: 0
-  useRate: 0.4
+  useRate: 0.2
   maxStack: 1
   healAmount: 0
   recoilSettings:
@@ -27,18 +27,18 @@ MonoBehaviour:
     recoveryDelay: 0.025
   attackLinearDrag: {x: 0, y: 0}
   attackGravity: 0
-  attackForce: 13
+  attackForce: 12.5
   attackCount: 1
   fadeOut: 1
   fadeOutMagnitude: 0
-  maxLifeTime: 0.4
+  maxLifeTime: 0.425
   spread: 2
-  damage: 5
+  damage: 6
   knockBack: 0
   customRange: 0
   burst: 1
   attacksPerBurst: 2
-  timeBetweenAttacks: 0.1
+  timeBetweenAttacks: 0.06
   parellelBullets: 0
   attackSpacing: 0.3
   attackOffset: {x: 0.1, y: 0.1}
@@ -49,6 +49,6 @@ MonoBehaviour:
     muzzleFlashSpeed: 4
     muzzleFlashSize: 3
     doFlash: 1
-  shotsPerClip: 15
-  reloadTime: 1
+  shotsPerClip: 20
+  reloadTime: 0.5
   reloadAnimation: 0

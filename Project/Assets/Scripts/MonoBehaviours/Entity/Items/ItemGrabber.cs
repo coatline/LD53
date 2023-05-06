@@ -5,6 +5,7 @@ using UnityEngine;
 public class ItemGrabber : MonoBehaviour
 {
     public event System.Action<LooseItem> OverItem;
+    public event System.Action<LooseItem> LeftItem;
 
     [SerializeField] Collider2D pickupCollider;
     [SerializeField] ItemHolder itemHolder;
@@ -33,6 +34,7 @@ public class ItemGrabber : MonoBehaviour
         {
             if (collision.gameObject.GetComponent<LooseItem>() == overItem)
             {
+                LeftItem?.Invoke(overItem);
                 overItem = null;
                 StartCoroutine(BlinkCollider());
             }
@@ -41,7 +43,7 @@ public class ItemGrabber : MonoBehaviour
 
     public void TryPickupItem()
     {
-        if (overItem == null) return;
+        if (overItem == null || overItem.PickedUp) return;
 
         // If my current item is not the same type as what I am trying to pick up
         if (itemHolder.Item != overItem.Item.Item)
@@ -57,7 +59,7 @@ public class ItemGrabber : MonoBehaviour
                 itemHolder.ChangeItem(new GunStack(overItem.Item.Item, 1));
             }
 
-            overItem.Pickup();
+            overItem.TryPickup();
         }
 
         overItem = null;

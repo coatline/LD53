@@ -7,12 +7,14 @@ public abstract class AiController : Inputs
     [SerializeField] float mouseReleaseDelayRange;
     [SerializeField] protected TopDownMover mover;
     [SerializeField] protected ItemHolder itemHolder;
+    [SerializeField] float findClosestEnemyDelay;
+    [SerializeField] float shootRangeMultiplier;
     [SerializeField] bool dontPickupWeapons;
     [SerializeField] float detectionRadius;
     [SerializeField] ItemGrabber grabber;
     [SerializeField] ItemUserDelay delay;
-    [SerializeField] ItemUser itemUser;
     [SerializeField] LayerMask enemyLayer;
+    [SerializeField] ItemUser itemUser;
     [SerializeField] string enemyTag;
     [SerializeField] bool armed;
 
@@ -38,7 +40,8 @@ public abstract class AiController : Inputs
         enemies = new List<Transform>();
 
         if (armed)
-            itemHolder.ChangeItem(new GunStack(DataLibrary.I.Guns.GetRandom(), 1));
+            if (itemHolder.Item == null)
+                itemHolder.ChangeItem(new GunStack(DataLibrary.I.Guns.GetRandom(), 1));
 
         delay.OnDelay += DoReleaseMouse;
         grabber.OverItem += PickupItem;
@@ -69,13 +72,44 @@ public abstract class AiController : Inputs
         itemHolder.Aim(Target.position, Vector2.zero);
     }
 
+    GameObject seeing;
+
     protected void Attack()
     {
         Aim();
 
         if (itemHolder.Item != null)
+        {
+
+
             if (CanSeeTarget())
+            {
+                //canSee = true;
                 itemUser.TryUseItem();
+            }
+            else
+            {
+                //int layerMask = (1 << Target.gameObject.layer);
+
+                //float distance = (itemHolder.Item as Gun).Range * 1.5f;
+                //Vector2 direction = (Target.position - transform.position).normalized;
+
+                //RaycastHit2D hit = Physics2D.Raycast(itemUser.BulletHole(), direction, distance, (layerMask | LayerMask.GetMask("Default")));
+                //if (this as SmartAIController != null)
+                //{
+                //    if (hit.collider)
+                //    {
+                //        print(hit.collider.gameObject.name);
+                //    }
+                //    else
+                //    {
+                //        print("Dfd");
+                //    }
+                //}
+
+            }
+        }
+
 
         NavigateTarget();
     }
@@ -121,17 +155,30 @@ public abstract class AiController : Inputs
 
     bool CanSeeTarget()
     {
-        int layerMask = Target.gameObject.layer;
+        int layerMask = (1 << Target.gameObject.layer);
 
-        float distance = (itemHolder.Item as Gun).Range * 1.5f;
+        float distance = (itemHolder.Item as Gun).Range * shootRangeMultiplier;
         Vector2 direction = (Target.position - transform.position).normalized;
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, distance, ~(layerMask & LayerMask.NameToLayer("Default") << 1));
+        RaycastHit2D hit = Physics2D.Raycast(itemHolder.ItemSpritePosition, direction, distance, (layerMask | LayerMask.GetMask("Default")));
+
+        if (hit.collider)
+            seeing = hit.collider.gameObject;
+        else
+            seeing = null;
 
         if (hit.collider == null) return false;
 
         return hit.collider.CompareTag(Target.gameObject.tag);
     }
+
+    //private void OnDrawGizmos()
+    //{
+    //    if (itemHolder.Item == null || Target == null) return;
+    //    print($"{itemHolder.ItemSpritePosition} + {((Target.position - transform.position).normalized * (itemHolder.Item as Gun).Range)}");
+
+    //    Gizmos.DrawLine(itemHolder.ItemSpritePosition, new Vector3(itemHolder.ItemSpritePosition.x, itemHolder.ItemSpritePosition.y) + ((Target.position - transform.position).normalized * (itemHolder.Item as Gun).Range));
+    //}
 
     protected void TryChooseTarget()
     {
@@ -174,7 +221,7 @@ public abstract class AiController : Inputs
     {
         while (true)
         {
-            yield return new WaitForSeconds(Random.Range(.5f, 1.5f));
+            yield return new WaitForSeconds(findClosestEnemyDelay);
             TryChooseTarget();
         }
     }

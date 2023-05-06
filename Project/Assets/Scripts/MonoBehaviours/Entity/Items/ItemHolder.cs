@@ -86,4 +86,6 @@ public class ItemHolder : MonoBehaviour
         handTransform.transform.localRotation = Quaternion.Euler(0, 0, (angle + 90));
         handSprite.transform.localRotation = Quaternion.Euler(flip, 0, 0);
     }
+
+    public Vector2 ItemSpritePosition => itemSprite.transform.position;
 }

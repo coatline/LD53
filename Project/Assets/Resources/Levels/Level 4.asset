@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   order: 3
   enemies:
-  - enemyPrefab: {fileID: 7170879263226799267, guid: 6987e7469601e3c4fa09d4d167da73cb, type: 3}
+  - enemyPrefab: {fileID: 5597984105393132767, guid: 6987e7469601e3c4fa09d4d167da73cb, type: 3}
     count: 2
   - enemyPrefab: {fileID: 7170879263226799267, guid: 017544cba1f5cdd47ba5899e3d33b86c, type: 3}
     count: 3

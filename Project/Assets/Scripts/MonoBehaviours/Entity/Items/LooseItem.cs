@@ -14,6 +14,8 @@ public class LooseItem : MonoBehaviour
     [SerializeField] Collider2D col;
     [SerializeField] Rigidbody2D rb;
     public ItemPackage Item { get; private set; }
+    public bool PickedUp => pickedUp;
+    bool pickedUp;
 
     public void Setup(ItemPackage itemPackage, bool doForce = true)
     {
@@ -36,8 +38,11 @@ public class LooseItem : MonoBehaviour
         col.enabled = true;
     }
 
-    public void Pickup()
+    public bool TryPickup()
     {
+        if (pickedUp) return false;
+        pickedUp = true;
         Destroy(gameObject);
+        return true;
     }
 }

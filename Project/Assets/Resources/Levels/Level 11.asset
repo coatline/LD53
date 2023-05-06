@@ -14,10 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   order: 10
   enemies:
+  - enemyPrefab: {fileID: 7170879263226799267, guid: 017544cba1f5cdd47ba5899e3d33b86c, type: 3}
+    count: 4
   - enemyPrefab: {fileID: 7170879263226799267, guid: cf6da5ae1d948d64ebd1b7fbb9c69fc8, type: 3}
     count: 4
   - enemyPrefab: {fileID: 7170879263226799267, guid: 017361b9df368264d87f88e3fa81fa5a, type: 3}
-    count: 2
+    count: 5
+  - enemyPrefab: {fileID: 7170879263226799267, guid: 966948eeeafdbca498dae1663f07b53a, type: 3}
+    count: 4
   - enemyPrefab: {fileID: 7170879263226799267, guid: 966948eeeafdbca498dae1663f07b53a, type: 3}
     count: 4
   decorTiles:
