@@ -6,10 +6,10 @@ public class LooseItemSpawner : Singleton<LooseItemSpawner>
 {
     [SerializeField] LooseItem looseItemPrefab;
 
-    public void SpawnItem(ItemPackage ip, Vector3 pos, bool doForce = true)
+    public void SpawnItem(ItemStack item, Vector3 pos, bool doForce = true)
     {
         LooseItem li = Instantiate(looseItemPrefab, pos, Quaternion.identity);
-        li.Setup(ip, doForce);
+        li.Setup(item, doForce);
     }
 
     //public void SpawnItems(ItemPool itemPool, Vector3 pos, bool doForce = true)

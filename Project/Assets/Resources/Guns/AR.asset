@@ -27,11 +27,11 @@ MonoBehaviour:
     recoveryDelay: 0.025
   attackLinearDrag: {x: 0, y: 0}
   attackGravity: 0
-  attackForce: 16.5
+  attackForce: 17
   attackCount: 1
   fadeOut: 1
   fadeOutMagnitude: 0
-  maxLifeTime: 0.6
+  maxLifeTime: 0.55
   spread: 8
   damage: 8
   knockBack: 0

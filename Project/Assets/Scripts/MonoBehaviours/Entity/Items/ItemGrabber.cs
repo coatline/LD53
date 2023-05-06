@@ -46,17 +46,17 @@ public class ItemGrabber : MonoBehaviour
         if (overItem == null || overItem.PickedUp) return;
 
         // If my current item is not the same type as what I am trying to pick up
-        if (itemHolder.Item != overItem.Item.Item)
+        if (itemHolder.Item != overItem.ItemStack.Type)
         {
             if (itemHolder.Item == null)
             {
-                itemHolder.ChangeItem(new GunStack(overItem.Item.Item, 1));
+                itemHolder.ChangeItem(overItem.ItemStack);
             }
             else
             {
                 // Swap items
-                LooseItemSpawner.I.SpawnItem(new ItemPackage(itemHolder.Item, 1), transform.position);
-                itemHolder.ChangeItem(new GunStack(overItem.Item.Item, 1));
+                LooseItemSpawner.I.SpawnItem(itemHolder.ItemStack, transform.position);
+                itemHolder.ChangeItem(overItem.ItemStack);
             }
 
             overItem.TryPickup();

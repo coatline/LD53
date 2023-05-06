@@ -150,7 +150,7 @@ MonoBehaviour:
   delay: {fileID: 3566404810832053707}
   enemyLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   itemUser: {fileID: 3302608261936981496}
   enemyTag: Enemy
   armed: 1

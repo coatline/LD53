@@ -22,12 +22,12 @@ MonoBehaviour:
   maxStack: 1
   healAmount: 0
   recoilSettings:
-    recoilAmount: 0.2
+    recoilAmount: 0.1
     recoverySpeed: 6
     recoveryDelay: 0
   attackLinearDrag: {x: 0, y: 0}
   attackGravity: 0
-  attackForce: 13.5
+  attackForce: 15
   attackCount: 1
   fadeOut: 1
   fadeOutMagnitude: 0

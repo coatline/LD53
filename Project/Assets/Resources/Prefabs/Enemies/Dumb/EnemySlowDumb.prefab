@@ -170,7 +170,7 @@ MonoBehaviour:
       m_Calls: []
   audioSource: {fileID: 0}
   hitSound: {fileID: 0}
-  maxHealth: 25
+  maxHealth: 17
 --- !u!114 &3859209985042342696
 MonoBehaviour:
   m_ObjectHideFlags: 0
