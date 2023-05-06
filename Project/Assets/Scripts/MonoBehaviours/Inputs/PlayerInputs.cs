@@ -41,9 +41,10 @@ public class PlayerInputs : Inputs
 
     void OverItem(LooseItem i)
     {
-        pressEText.transform.position = transform.position + new Vector3(0, 2, 0);
+        pressEText.transform.position = i.transform.position - new Vector3(0, .5f, 0);
         pressEText.SetActive(true);
     }
+
     void LeftItem(LooseItem i) => pressEText.SetActive(false);
 
     void Update()

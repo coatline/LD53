@@ -13,14 +13,14 @@ public class LooseItem : MonoBehaviour
     [SerializeField] SpriteRenderer sr;
     [SerializeField] Collider2D col;
     [SerializeField] Rigidbody2D rb;
-    public ItemPackage Item { get; private set; }
+    public ItemStack ItemStack { get; private set; }
     public bool PickedUp => pickedUp;
     bool pickedUp;
 
-    public void Setup(ItemPackage itemPackage, bool doForce = true)
+    public void Setup(ItemStack itemStack, bool doForce = true)
     {
-        sr.sprite = itemPackage.Item.Sprite;
-        Item = itemPackage;
+        sr.sprite = itemStack.Type.Sprite;
+        ItemStack = itemStack;
 
         StartCoroutine(PickupDelay());
 

@@ -28,6 +28,18 @@ public class ReloadBehavior : MonoBehaviour
 
         if (gunStack == null) return;
 
+        Reloading = false;
+
+        if (AutoReloading)
+        {
+            AutoReloadComplete?.Invoke();
+            AutoReloading = false;
+        }
+
+        // Update UI for this gun. 
+        // Should really do this with a separate event (what if something else is subbed to this?)
+        Shot?.Invoke();
+
         gunStack.Shot += Shot;
         gunStack.ShotsGone += AutoReload;
         interval = gunStack.GunType.ReloadTime / gunStack.MaxShots;

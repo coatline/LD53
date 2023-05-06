@@ -44,7 +44,7 @@ public class ItemHolder : MonoBehaviour
         if (dontDropItem) return;
 
         if (Item != null)
-            LooseItemSpawner.I.SpawnItem(new ItemPackage(Item, 1), transform.position);
+            LooseItemSpawner.I.SpawnItem(ItemStack, transform.position);
     }
 
     public void ChangeItem(ItemStack stack)

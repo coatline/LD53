@@ -27,12 +27,12 @@ MonoBehaviour:
     recoveryDelay: 0.025
   attackLinearDrag: {x: 0, y: 0}
   attackGravity: 0
-  attackForce: 13
-  attackCount: 5
+  attackForce: 15.5
+  attackCount: 10
   fadeOut: 1
   fadeOutMagnitude: 0
-  maxLifeTime: 0.3
-  spread: 10
+  maxLifeTime: 0.25
+  spread: 12
   damage: 5
   knockBack: 0
   customRange: 0
@@ -49,6 +49,6 @@ MonoBehaviour:
     muzzleFlashSpeed: 4
     muzzleFlashSize: 3
     doFlash: 1
-  shotsPerClip: 10
+  shotsPerClip: 20
   reloadTime: 1
   reloadAnimation: 0

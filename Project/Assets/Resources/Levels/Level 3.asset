@@ -25,7 +25,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 54d3b4ca0b510ce4888578e553fe10ec, type: 2}
   floorTile: {fileID: 11400000, guid: 24a22b294bcf6d146a3fdfb6408b3891, type: 2}
   wallTile: {fileID: 11400000, guid: 09aed969f3e9dd34f8fc0afe0e424b1a, type: 2}
-  walkerIterations: 5a0000005a0000005a0000005a0000005a0000005a0000005a0000005a0000005a000000
+  walkerIterations: 96000000960000005a0000005a0000005a000000
   levelWidth: 75
   levelHeight: 75
   borderSize: {x: 0, y: 0}
